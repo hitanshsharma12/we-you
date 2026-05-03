@@ -1,35 +1,102 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* Fonts */
 :root {
   --font-cormorant: "Cormorant Garamond", serif;
   --font-jost: "Jost", sans-serif;
 }
 
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
+/* Base */
 body {
   background-color: #faf6f0;
   color: #4a3728;
+  font-family: var(--font-jost);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f2ebe0; }
-::-webkit-scrollbar-thumb { background: #c4b5a5; border-radius: 3px; }
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0d09;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a96e;
+  border-radius: 3px;
+}
 
-/* Fade-in animation */
+/* Animations */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.animate-fade-up { animation: fadeUp 0.7s ease forwards; }
 
-@keyframes shimmer {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.animate-shimmer { animation: shimmer 3s ease-in-out infinite; }
+
+@keyframes scrollLine {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 0;
+  }
+}
+
+/* Utility classes */
+.animate-fade-up {
+  animation: fadeUp 1s ease forwards;
+}
+
+.animate-fade-up-2 {
+  animation: fadeUp 1s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-3 {
+  animation: fadeUp 1s ease 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-4 {
+  animation: fadeUp 1s ease 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.animate-scroll-line {
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+/* Extra luxury touch */
+::selection {
+  background: #c9a96e;
+  color: #080604;
+}
