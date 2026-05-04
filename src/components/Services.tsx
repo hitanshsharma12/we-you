@@ -25,12 +25,12 @@ const services = [
     desc: "Gentle, precise hair removal for silky smooth results every time.",
     img: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=80",
   },
-  {
-    icon: "👰",
-    name: "Bridal Makeup",
-    desc: "Flawless bridal looks crafted to make your most special day unforgettable.",
-    img: "https://images.unsplash.com/photo-1519699766478-7a9b2d33f9b6?w=400&q=80",
-  },
+ {
+  icon: "👰",
+  name: "Bridal Makeup",
+  desc: "Flawless bridal looks crafted to make your most special day unforgettable.",
+img: "https://images.unsplash.com/photo-1621784563330-caee0b138a00?w=400&q=80",
+},
   {
     icon: "🎨",
     name: "Hair Color",

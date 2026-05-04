@@ -96,17 +96,17 @@ export default function VisitUs() {
             transition={{ duration: 0.7 }}
             className="relative rounded-2xl overflow-hidden border border-[#c9a96e]/10"
           >
-            {/* glow overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,169,110,0.15),transparent_70%)] opacity-40" />
+            {/* subtle glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,169,110,0.12),transparent_70%)] pointer-events-none" />
 
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3386.294!2d77.7476!3d31.2014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDEyJzA1LjAiTiA3N8KwNDQnNTEuNCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps?q=31.2014,77.7476&hl=en&z=18&t=k&output=embed"
               width="100%"
               height="360"
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              className="grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+              className="opacity-90 hover:opacity-100 transition-all duration-500"
               title="We You Salon Location"
             />
           </motion.div>
