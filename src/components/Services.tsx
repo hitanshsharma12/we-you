@@ -1,3 +1,5 @@
+"use client";
+
 const services = [
   {
     icon: "✂️",
@@ -39,40 +41,60 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 px-6 bg-cream">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-[10px] tracking-[0.5em] uppercase text-rose font-sans block mb-3">
+    <section id="services" className="py-28 px-6 bg-[#080604] text-[#f5f0e8]">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Heading */}
+        <div className="text-center mb-20">
+          <span className="text-[10px] tracking-[0.5em] uppercase text-[#c9a96e] font-sans block mb-3">
             What We Offer
           </span>
-          <h2 className="font-serif text-[clamp(36px,6vw,60px)] font-light text-espresso">
-            Our <em className="italic text-rose">Signature</em> Services
+
+          <h2 className="font-serif text-[clamp(36px,6vw,64px)] font-light">
+            Our <em className="italic text-[#c9a96e]">Signature</em> Services
           </h2>
-          <div className="w-14 h-px bg-taupe mx-auto mt-6" />
+
+          <div className="w-16 h-px bg-[#c9a96e]/40 mx-auto mt-6" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s) => (
             <div
               key={s.name}
-              className="group bg-linen overflow-hidden border border-sand hover:border-taupe transition-all duration-300 hover:shadow-lg"
+              className="group relative rounded-2xl overflow-hidden border border-[#c9a96e]/10 bg-[#0f0d09] hover:border-[#c9a96e]/40 transition-all duration-500 shadow-md hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
             >
-              <div className="overflow-hidden aspect-[4/3]">
+              
+              {/* Image */}
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={s.img}
                   alt={s.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover scale-105 group-hover:scale-110 transition duration-700"
                 />
+
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080604]/80 via-transparent to-transparent" />
               </div>
-              <div className="p-5">
-                <span className="text-xl mb-3 block">{s.icon}</span>
-                <h3 className="font-serif text-xl font-light text-espresso mb-2">
+
+              {/* Content */}
+              <div className="p-6">
+                <span className="text-2xl mb-3 block">{s.icon}</span>
+
+                <h3 className="font-serif text-xl text-[#f5f0e8] mb-2">
                   {s.name}
                 </h3>
-                <p className="text-[12px] text-mocha/70 leading-relaxed font-sans font-light">
+
+                <p className="text-[12px] text-[#6b6055] leading-relaxed font-sans">
                   {s.desc}
                 </p>
+
+                {/* Gold line */}
+                <div className="w-10 h-px bg-[#c9a96e]/50 mt-4 group-hover:w-16 transition-all duration-300" />
               </div>
+
+              {/* Hover glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(201,169,110,0.15),transparent_70%)]" />
             </div>
           ))}
         </div>
